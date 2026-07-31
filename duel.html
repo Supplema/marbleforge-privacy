@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A duel awaits — Marble Forge</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:#0e0f17; color:#e8e4dc; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+  .card { width:min(92vw,430px); padding:34px 26px 30px; text-align:center;
+          background:linear-gradient(#15161f,#101119); border:1px solid #2a2c3a; border-radius:18px;
+          box-shadow:0 20px 60px #0009; }
+  h1 { margin:0 0 6px; font-size:26px; letter-spacing:.04em; color:#ffd161; }
+  .sub { margin:0 0 22px; font-size:15px; color:#8d93a6; }
+  .idlabel { font-size:12px; letter-spacing:.18em; color:#8d93a6; margin-bottom:8px; }
+  .id { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:20px; letter-spacing:.06em;
+        background:#0b0c13; border:1px solid #33364a; border-radius:10px; padding:14px 10px; word-break:break-all; }
+  button { width:100%; margin-top:14px; padding:15px; font-size:16px; font-weight:600; cursor:pointer;
+           color:#12131b; background:#ffd161; border:0; border-radius:11px; }
+  button.ghost { background:transparent; color:#c9cddb; border:1px solid #33364a; }
+  ol { text-align:left; margin:22px 0 0; padding-left:20px; color:#b9bece; font-size:14px; line-height:1.65; }
+  .foot { margin-top:20px; font-size:12px; color:#6a7083; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>A DUEL AWAITS</h1>
+  <p class="sub">Someone has challenged you in Marble Forge.</p>
+  <div class="idlabel">YOUR DUEL ID</div>
+  <div class="id" id="duelid">—</div>
+  <button id="copy">Copy duel id</button>
+  <button class="ghost" id="store">I don't have the game yet</button>
+  <ol>
+    <li>Copy the duel id above.</li>
+    <li>Open <b>Marble Forge</b>.</li>
+    <li><b>Rival Trial → Paste rival's move</b>.</li>
+    <li>Your rival's opening move replays — then it's your turn.</li>
+  </ol>
+  <p class="foot">No account needed. Nothing personal is stored — the duel id is the only key.</p>
+</div>
+<script>
+  var id = new URLSearchParams(location.search).get('d') || '';
+  document.getElementById('duelid').textContent = id || 'no duel id in this link';
+  document.getElementById('copy').onclick = function () {
+    navigator.clipboard.writeText(id).then(function () {
+      document.getElementById('copy').textContent = 'Copied — now open Marble Forge';
+    });
+  };
+  document.getElementById('store').onclick = function () {
+    location.href = 'https://play.google.com/store/apps/details?id=com.forgeplay.marbleforge';
+  };
+</script>
+</body>
+</html>
