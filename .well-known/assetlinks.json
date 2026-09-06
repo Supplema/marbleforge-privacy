@@ -1,10 +1,13 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.forgeplay.marbleforge",
-    "sha256_cert_fingerprints": [
-      "E9:1D:86:47:3B:73:F8:85:93:0D:E6:31:18:44:D6:31:02:F9:29:2E:E1:14:BE:B7:C0:06:99:7B:EF:A4:D2:9B"
-    ]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.forgeplay.marbleforge",
+      "sha256_cert_fingerprints": [
+        "D7:72:BB:0B:94:72:FD:A9:E1:04:CC:B6:D5:CB:18:B0:09:EB:7B:5C:B1:0D:EB:4A:AA:19:D6:D7:0B:6E:98:BF",
+        "E9:1D:86:47:3B:73:F8:85:93:0D:E6:31:18:44:D6:31:02:F9:29:2E:E1:14:BE:B7:C0:06:99:7B:EF:A4:D2:9B"
+      ]
+    }
   }
-}]
+]
